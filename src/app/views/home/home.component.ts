@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonasService } from 'src/app/services/personas.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'Claudio-app';
-  constructor() { }
+  personas = [];
+
+  constructor(private personasService: PersonasService) { }
 
   ngOnInit() {
+    this.personasService.listarPersonas().subscribe(resp=>{
+      this.personas = resp["personas"];
+      console.log(this.personas);
+    });
   }
+
 
 }

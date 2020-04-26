@@ -1,18 +1,18 @@
 <div class="container">
-    <div class="form">
+    <form [formGroup]="loginForm">
         <div class="center">
             <img src="./../../../assets/img/angular.png" alt="" srcset="">
         </div>
         <mat-form-field class="full-width">
             <mat-label>Usuario</mat-label>
-            <input matInput placeholder="Introduzca su nombre de usuario">
+            <input formControlName="usuario" matInput placeholder="Introduzca su nombre de usuario">
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" placeholder="Introduzca su contraseña">
+            <input matInput formControlName="contrasena" type="password" placeholder="Introduzca su contraseña">
         </mat-form-field>
 
         <button mat-flat-button class="full-width" color="primary" (click)="login()">Login</button>
-    </div>
+    </form>
 </div>

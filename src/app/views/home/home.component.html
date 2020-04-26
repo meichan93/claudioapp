@@ -1,2 +1,9 @@
 <mat-toolbar color="primary">{{ title }}</mat-toolbar>
-<p>El home funcionó con éxito!! :D</p>
+
+<div *ngIf="personas.length > 0">
+    <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let persona of personas">
+            {{persona.nombre}} {{persona.apellido}} / Tel: {{persona.telefono}}
+        </mat-list-item>
+    </mat-list>
+</div>
